@@ -42,9 +42,9 @@ def mov(h,d,t,L): #h is a 2 member list that holds the position of head of snake
     t[0]=list(h)
     for i in range(1,len(t)):
         t[i],k=k,t[i]
-    L[h[0]][h[1]]="H"
+    L[h[0]][h[1]]="🐉"
     for j in range(1,len(t)):
-        L[t[j][0]][t[j][1]]="." #H in grid is head of snake and body is by "."
+        L[t[j][0]][t[j][1]]="🟩" #H in grid is head of snake and body is by "."
     L[ot[0]][ot[1]]=" "
     print(tabulate(L,tablefmt="grid"))
     if h in t[1:]:
@@ -75,9 +75,9 @@ def Apple(h,d,t,ap,L):
             else:
                 k[0]=k[0]+1
         t.append(k)
-        L[k[0]][k[1]]="."
+        L[k[0]][k[1]]="🟩"
 L=[[" "," "," "," "," "," "," "," "," "], [" "," "," "," "," "," "," "," "," "], [" "," "," "," "," "," "," "," "," "], [" "," "," "," "," "," "," "," "," "], [" "," "," "," "," "," "," "," "," "], [" "," "," "," "," "," "," "," "," "], [" "," "," "," "," "," "," "," "," "], [" "," "," "," "," "," "," "," "," "], [" "," "," "," "," "," "," "," "," "]]
-L[4][4]="H"
+L[4][4]="🐉"
 h=[4,4]
 d=1
 t=[[4,4],]
@@ -86,10 +86,10 @@ ac = 0.0
 ap = [random.randint(0, 8), random.randint(0, 8)]
 while ap in t:
     ap = [random.randint(0, 8), random.randint(0, 8)]
-L[ap[0]][ap[1]] = "A"
+L[ap[0]][ap[1]] = "🍎"
 while True:
     clear_screen()
-    print("🎮 TAP [1=Left, 2=Up, 3=Right, 4=Down] - Snake moves automatically!")
+    print("TAP [1=Left, 2=Up, 3=Right, 4=Down] - Snake moves automatically!")
     d = check_keyboard(d)
     mov(h,d,t,L)
     time.sleep(1)
@@ -101,5 +101,5 @@ while True:
         ap = [random.randint(0, 8), random.randint(0, 8)]
         while ap in t:
             ap = [random.randint(0, 8), random.randint(0, 8)]
-        L[ap[0]][ap[1]] = "A"
+        L[ap[0]][ap[1]] = "🍎"
         ac = 0.0

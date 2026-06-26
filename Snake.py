@@ -92,8 +92,8 @@ while True:
     print("🎮 TAP [1=Left, 2=Up, 3=Right, 4=Down] - Snake moves automatically!")
     d = check_keyboard(d)
     mov(h,d,t,L)
-    time.sleep(0.3)
-    ac+=0.3
+    time.sleep(1)
+    ac+=1
     if h == ap or ac >= 20.0:
         # Clear old apple location frame back to empty space
         L[ap[0]][ap[1]] = " "
